@@ -10,9 +10,15 @@ import {
 import setupMirage from "ember-cli-mirage/test-support/setup-mirage";
 import { setupApplicationTest } from "ember-qunit";
 
+import { StubMapsService } from "../helpers/stub-maps-service";
+
 module("Acceptance | list rentals", function(hooks) {
   setupApplicationTest(hooks);
   setupMirage(hooks);
+
+  hooks.beforeEach(function() {
+    this.owner.register("service:map-element", StubMapsService);
+  });
 
   test("should show rentals as the home page", async function(assert) {
     await visit("/");

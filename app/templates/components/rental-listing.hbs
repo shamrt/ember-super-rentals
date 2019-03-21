@@ -5,6 +5,7 @@
     <img src={{this.rental.image}} alt={{this.rental.title}}>
     <small>View Larger</small>
   </a>
+  
   <div class="details">
     <h3>{{this.rental.title}}</h3>
     <div class="detail owner">
@@ -20,4 +21,6 @@
       <span>Number of bedrooms:</span> {{this.rental.bedrooms}}
     </div>
   </div>
+
+  <LocationMap @location={{this.rental.city}} />
 </article>
