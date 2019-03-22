@@ -52,11 +52,9 @@ export default function() {
   this.get("/rentals", function(db, request) {
     if (request.queryParams.city !== undefined) {
       const filteredRentals = rentals.filter(function(input) {
-        return (
-          input.attributes.city
-            .toLowerCase()
-            .includes(request.queryParams.city.toLowerCase())
-        );
+        return input.attributes.city
+          .toLowerCase()
+          .includes(request.queryParams.city.toLowerCase());
       });
       return { data: filteredRentals };
     } else {
@@ -64,6 +62,11 @@ export default function() {
     }
   });
 
+  // Find and return the provided rental from our rental list above
+  this.get("/rentals/:id", function(db, request) {
+    return { data: rentals.find(rental => request.params.id === rental.id) };
+  });
+
   // Mapbox
-  this.passthrough('https://api.mapbox.com/**');
+  this.passthrough("https://api.mapbox.com/**");
 }

@@ -1,0 +1,31 @@
+<div class="jumbo show-listing">
+  <h2 class="title">{{this.model.title}}</h2>
+  <div class="content">
+    <div>
+      <img src={{this.model.image}} class="rental-pic" alt="Picture of {{this.model.title}}">
+    </div>
+
+    <section class="detail-section">
+      <dl class="details-list">
+        <dt>Owner:</dt>
+        <dd class="detail owner">
+          {{this.model.owner}}
+        </dd>
+        <dt>Type:</dt>
+        <dd class="detail">
+          {{rental-property-type this.model.category}} - {{this.model.category}}
+        </dd>
+        <dt>Location:</dt>
+        <dd class="detail">
+          {{this.model.city}}
+        </dd>
+        <dt>Number of bedrooms:</dt>
+        <dd class="detail">
+          {{this.model.bedrooms}}
+        </dd>
+      </dl>
+
+      <p class="description">{{this.model.description}}</p>
+    </section>
+  </div>
+</div>
