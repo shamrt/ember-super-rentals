@@ -1,12 +1,12 @@
 <div class="jumbo show-listing">
-  <h2 class="title">{{this.model.title}}</h2>
+  <h2 data-test-title class="title">{{this.model.title}}</h2>
   <div class="content">
     <div>
-      <img src={{this.model.image}} class="rental-pic" alt="Picture of {{this.model.title}}">
+      <img data-test-rental-image src={{this.model.image}} class="rental-pic" alt="Picture of {{this.model.title}}">
     </div>
 
     <section class="detail-section">
-      <dl class="details-list">
+      <dl data-test-rental-details class="details-list">
         <dt>Owner:</dt>
         <dd class="detail owner">
           {{this.model.owner}}
@@ -25,7 +25,7 @@
         </dd>
       </dl>
 
-      <p class="description">{{this.model.description}}</p>
+      <p data-test-rental-description class="description">{{this.model.description}}</p>
     </section>
   </div>
 </div>
